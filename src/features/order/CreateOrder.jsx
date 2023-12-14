@@ -54,7 +54,7 @@ function CreateOrder() {
           <div>
             <input type="tel" name="phone" required />
           </div>
-          {errors?.phone && <p>{errors.phone}</p>}
+          {errors?.phone && <p>{errors.phone} </p>}
         </div>
 
         <div>
