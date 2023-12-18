@@ -19,7 +19,7 @@ const cartSlice = createSlice({
       state.cart.push(action.payload);
     },
     deleteItem(state, action) {
-      state.cart.filter((item) => item.pizzaId !== action.payload);
+      state.cart = state.cart.filter((item) => item.pizzaId !== action.payload);
     },
     increaseItem(state, action) {
       const item = state.cart.find((item) => item.pizzaId === action.payload);
