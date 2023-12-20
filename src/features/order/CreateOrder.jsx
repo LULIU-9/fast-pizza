@@ -97,7 +97,7 @@ function CreateOrder() {
                   dispatch(fetchAddress());
                 }}
               >
-                Get Address
+                {isPositionLoading ? "Loading..." : "Get Address"}
               </Button>
             </span>
           )}
