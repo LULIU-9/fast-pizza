@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getAddress } from "../../services/apiGeocoding";
-import { action } from "../order/CreateOrder";
 
 function getPosition() {
   return new Promise(function (resolve, reject) {
@@ -42,10 +41,9 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
-      .addCase(
-        fetchAddress.pending,
-        (state, action) => (state.status = "loading"),
-      )
+      .addCase(fetchAddress.pending, (state, action) => {
+        state.status = "loading";
+      })
       .addCase(fetchAddress.fulfilled, (state, action) => {
         state.position = action.payload.position;
         state.address = action.payload.address;
